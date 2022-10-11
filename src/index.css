@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@500&display=swap');
+.appbackground{
+   background-color: rgb(248, 248, 237);
+}
+.options{
+   position: relative;
+   top: 0;
+
+}
+
+.navbarh1{
+   font-family: 'Dancing Script', cursive;
+  font-weight: 900;
+}
+.navbar{
+   background-color: rgb(6, 6, 229);
+   /* rgb(1, 1, 156) */
+}
+.deactive{
+   text-align: center;
+   justify-content: center;
+padding-top: 12px;
+   font: bolder;
+   background-color: white;
+   font-family: 'Poppins', sans-serif;
+   color: rgb(6, 6, 229);
+   border-bottom: 2px blue solid;
+}
+.active{
+   text-align: center;
+   justify-content: center;
+   font: bolder;
+padding-top: 12px;
+   font-size: large;
+   font-family: 'Poppins', sans-serif;
+   background-color: rgb(7, 7, 247);
+   color: white;
+   border-bottom: 2px solid blue;
+
+}
+.entries{
+   width: fit-content;
+   height:70px;
+   background-color: rgb(251, 241, 227);
+   border: 2px solid blue;
+   border-radius: 6px;
+   justify-content: center;
+   align-items: center;
+   padding-top: 20px;
+   
+}

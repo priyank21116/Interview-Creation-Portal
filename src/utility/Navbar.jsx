@@ -1,11 +1,12 @@
-import React,{useState} from 'react'
+import React from 'react'
+
 
 const Navbar = () => {
   return (
-    <div>
-      <nav className="container h-24 justify-center align-middle">
-         <h1 className='w-full text-3xl font-bold text-[#00df98]'>InterView Creation Portal</h1>
-      </nav>
+    <div className='  justify-center w-full mx-auto border-b-4 border-blue-600 navbar '>
+
+         <h1 className='w-full text-3xl  text-[#f4f5f1] navbarh1 py-2.5 px-8' >Interview Creation Portal .</h1>
+      
     </div>
   )
 }
