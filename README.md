@@ -1,11 +1,18 @@
-# Interview creation portal
+# Interview Creation Portal
+
+## Tech Used - React, Tailwind Css, Css, Html.
 ---
-## Backend- 
+### Backend- https://github.com/priyank21116/Interview-CreationPortal-Backend
 ---
 
-![sl](./src/images/sl.png)
+Schedule Interview screen
 ![st](./src/images/st.png)
+![sl](./src/images/sl.png)
+
+View All Scheduled Interview -Screen
 ![h](./src/images/h.png)
+
+Update Interview - Screen
 ![het](./src/images/het.png)
 ![heb](./src/images/heb.png)
 
