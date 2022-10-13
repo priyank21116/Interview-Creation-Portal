@@ -11,7 +11,7 @@ const ScheduleInterview = ({flag,iid=``}) => {
   const [etime,setetime]=useState(Date)
   const [discription,setdiscription]=useState(String)
 
-  let baseapi =`https://interview-scheduling-portal-1.herokuapp.com/`
+  let baseapi =`https://interviewportalprk.herokuapp.com`
 
   let api = flag==="new"?`${baseapi}/api` : `${baseapi}/api/${iid}`;
 

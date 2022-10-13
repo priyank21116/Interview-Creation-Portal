@@ -3,7 +3,7 @@ import { useEffect,useState } from 'react'
 import axios from 'axios'
 
 const CandidateList = ({flag,addinlist}) => {
-  let baseapi =`https://interview-scheduling-portal-1.herokuapp.com/`
+  let baseapi =`https://interviewportalprk.herokuapp.com`
 
   const [data,setdata] = useState([])
   // const [selected,setselected] =useState(false) 

@@ -8,7 +8,7 @@ const Home = () => {
    const [interviewss,setinterviewss] = useState([]) 
    const [flag,setFlag]= useState(false)
    
-   let baseapi =`https://interview-scheduling-portal-1.herokuapp.com/`
+   let baseapi =`https://interviewportalprk.herokuapp.com`
 
    const deleteinterview=(iid)=>{    
     axios.delete(`${baseapi}/api/${iid}`)
