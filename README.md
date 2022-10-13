@@ -1,8 +1,11 @@
 # Interview Creation Portal
-
-## Tech Used - React, Tailwind Css, Css, Html.
 ---
-### Backend- https://github.com/priyank21116/Interview-CreationPortal-Backend
+## Website link:-
+### https://majestic-creponne-98bf4a.netlify.app/
+---
+### Tech Used - React, JavaScript, TailwindCss, Css, Html.
+---
+## BackendCode- https://github.com/priyank21116/Interview-CreationPortal-Backend
 ---
 
 Schedule Interview screen
@@ -17,12 +20,14 @@ Update Interview - Screen
 ![heb](./src/images/heb.png)
 
 
-## Basic Requirements
-- An interview creation page where the admin can create an interview by selecting participants, start time and end time. Backend should throw error with proper error message if: 
+## Basic Features
+- Singal Page Website
+- An interview creation section where the admin can create an interview by selecting participants, start time ,end time and description. Backend should throw error with proper error message if: 
 -- Any of the participants is not available during the scheduled time (i.e, has another interview scheduled)
 -- No of participants is less than 2
-- An interviews list page where admin can see all the upcoming interviews.
-- An interview edit page where admin can edit the created interview with the same validations as on the creation page.
+-- Other then these two, app have various component specific checks and error
+- An interviews list page where admin can see all the upcoming interviews.From here Admin can delete or reshedule interview
+- An interview edit dropout component where admin can edit the created interview with the same validations as on the creation page.
 
 
 
