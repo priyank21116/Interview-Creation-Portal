@@ -26,8 +26,8 @@ const ListItem = ({index,item,deleteinterview}) => {
            <h6>{`description : ${discription}`}</h6> 
       </div>
       <div className='flex-cols grid '>
-         <button className=' bg-red-600 h-3/5 w-4/5 my-7 mx-5 border-2 border-gray-200 bg-white rounded-xl shadow-2xl shadow-inner'  onClick={()=>{ setdel(!del) ; deleteinterview(iid);}}>Delete Interview</button>
-         <button className='bg-purple-600 h-3/5 w-4/5 my-7 mx-5 border-2 border-gray-200 bg-white rounded-xl shadow-2xl shadow-inner' onClick={()=>( setupdate(!update))}>Update Interview</button>
+         <button className=' bg-red-600 h-3/5 w-4/5 my-7 mx-5 border-2 border-gray-200 bg-white rounded-xl shadow-2xl shadow-inner  hover:bg-red-300 active:bg-red-400 focus:outline-none focus:ring focus:ring-red-800'  onClick={()=>{ setdel(!del) ; deleteinterview(iid);}}>Delete Interview</button>
+         <button className='bg-purple-600 h-3/5 w-4/5 my-7 mx-5 border-2 border-gray-200 bg-white rounded-xl shadow-2xl shadow-inner hover:bg-violet-300 active:bg-violet-400 focus:outline-none focus:ring focus:ring-violet-800' onClick={()=>( setupdate(!update))}>Update Interview</button>
       </div>
     </div>
     { update && <div className= 'h-[auto] w-5/6 border-2 mx-auto -mt-4 pt-4 border-t-0 border-gray-600 z-1 rounded-2xl rounded-t-none'>

@@ -8,15 +8,18 @@ const Home = () => {
    const [interviewss,setinterviewss] = useState([]) 
    const [flag,setFlag]= useState(false)
    
+   let baseapi =`https://interview-scheduling-portal-1.herokuapp.com/`
 
    const deleteinterview=(iid)=>{    
-    axios.delete(`http://localhost:5000/api/${iid}`).then(res => {setFlag(!flag)})
+    axios.delete(`${baseapi}/api/${iid}`)
+    .then((r)=>{setFlag(!flag) ; alert(r.data.message);})
+    .catch((err)=>{alert(err.response.data.message)})
    }
   
   //  const fetch=async()=>{
   //   await axios.({
   //     method: 'GET',
-  //     url:'http://localhost:5000/api',
+  //     url:'${baseapi}/api',
   //     header:{
   //       "Content-Type": "application/json"
   //     }
@@ -25,42 +28,14 @@ const Home = () => {
   
 
    useEffect(()=>{
-    axios.get('http://localhost:5000/api').then(res =>{
+    axios.get(`${baseapi}/api`).then(res =>{
       console.log("::::::",res)
       setinterviewss(res.data)
       
     })
    },[flag])
 
-   const items =[
-    {
-        "_id": "634656f8e8a1690093fc85bb",
-        "participants": [
-            {
-                "_id": "6345b7e2335f16261801f97a",
-                "name": "Abhijeet",
-                "email": "abhijeet@gmail.com",
-                "appliedfor": "Human Resource Internship"
-            },
-            {
-                "_id": "6345bf32ed875bbc928d34f3",
-                "name": "Gaurang verma",
-                "email": "gaurang@gmail.com",
-                "appliedfor": "Software developermenmt engineer"
-            },
-            {
-                "_id": "6345be86ed875bbc928d34ef",
-                "name": "Kanika",
-                "email": "kanika@gmail.com",
-                "position": "Product Manager"
-            }
-        ],
-        "stime": "2022-10-12T09:04:45.904Z",
-        "etime": "2022-10-12T10:04:45.904Z",
-        "discription": "Software Development Engineer Role",
-        "__v": 0
-    }
-]
+
 
  
 
@@ -70,7 +45,7 @@ const Home = () => {
 
       return(
        < ListItem 
-       key={index}
+       key={obj._id}
        index={index} 
        item= {obj} 
        deleteinterview={deleteinterview}

@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import CandidateList from '../utility/CandidateList';
 import axios from 'axios'
-
+// import { Success,Failure } from '../utility/Error';
 
 const ScheduleInterview = ({flag,iid=``}) => {
 
@@ -11,7 +11,9 @@ const ScheduleInterview = ({flag,iid=``}) => {
   const [etime,setetime]=useState(Date)
   const [discription,setdiscription]=useState(String)
 
-  let api = flag==="new"?`http://localhost:5000/api` : `http://localhost:5000/api/${iid}`;
+  let baseapi =`https://interview-scheduling-portal-1.herokuapp.com/`
+
+  let api = flag==="new"?`${baseapi}/api` : `${baseapi}/api/${iid}`;
 
   const addinlist= (item)=>{
        setparticipants([...participants,{ _id:item._id ,name: item.name , email: item.email}])    
@@ -19,21 +21,26 @@ const ScheduleInterview = ({flag,iid=``}) => {
 
   const submithere=(e)=>{
     e.preventDefault();
-    flag=="new" ? (axios.post(api,{
+    flag==="new" ? (axios.post(api,{
       participants,
       date,
       stime: new Date(`${date}  ${stime}`),
       etime: new Date(`${date}  ${etime}`),
       discription,
-    }).then((r)=>console.log(`New interview Schelduled ${r.status} meassage ${r.message}`))) :
+    }))
+    .then((r)=>(alert(r.data.message)))
+    .catch((err)=>{alert(err.response.data.message)})
+    
+    :
     (axios.put(api,{
       participants,
       date,
       stime: new Date(`${date}  ${stime}`),
       etime: new Date(`${date}  ${etime}`),
       discription,
-    }).then((r)=>console.log(`New interview Schelduled ${r.status} meassage ${r.message}`)))
-
+    }))
+    .then((r)=>{ console.log(r); alert(r.data.message);})
+    .catch((err)=>{console.log(err) ;alert(err.response.data.message);})
   }
 
 
@@ -79,8 +86,8 @@ const ScheduleInterview = ({flag,iid=``}) => {
           <input className='w-full h-4/6 border rounded border-blue-400' type={'text'} placeholder='Interview Details' value={discription} name='discription' onChange={(e)=>{ console.log(e.target.value) ;setdiscription(e.target.value)}}></input>
 
          </div>
-         <div className='overflow-hidden w-4/5 mx-auto mt-4 border-2 border-black rounded active'>
-             <button type='submit' > Schedule Interview</button>
+         <div className='overflow-hidden w-4/5 mx-auto mt-4 border-2 border-black rounded hover:bg-blue-400 active:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-800 active'>
+             <button type='submit' className=''>{flag==="new" ? 'Schedule Interview': 'Update'} </button>
          </div>
 
     </div>
@@ -90,6 +97,7 @@ const ScheduleInterview = ({flag,iid=``}) => {
 
     </div>
     </form>
+    
     </>
   )
 }
