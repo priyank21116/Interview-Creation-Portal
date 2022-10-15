@@ -17,6 +17,15 @@ const ScheduleInterview = ({flag,iid=``}) => {
 
   const addinlist= (item)=>{
        setparticipants([...participants,{ _id:item._id ,name: item.name , email: item.email}])    
+
+  }
+
+  const setbacktoEmpty=()=>{
+    setparticipants([])
+    setdate(Date)
+    setstime(Date)
+    setetime(Date)
+    setdiscription('')
   }
 
   const submithere=(e)=>{
@@ -28,7 +37,7 @@ const ScheduleInterview = ({flag,iid=``}) => {
       etime: new Date(`${date}  ${etime}`),
       discription,
     }))
-    .then((r)=>(alert(r.data.message)))
+    .then((r)=>{alert(r.data.message); setbacktoEmpty();})
     .catch((err)=>{alert(err.response.data.message)})
     
     :
@@ -39,7 +48,7 @@ const ScheduleInterview = ({flag,iid=``}) => {
       etime: new Date(`${date}  ${etime}`),
       discription,
     }))
-    .then((r)=>{ console.log(r); alert(r.data.message);})
+    .then((r)=>{ console.log(r); alert(r.data.message); setbacktoEmpty();window.location.reload();})
     .catch((err)=>{console.log(err) ;alert(err.response.data.message);})
   }
 
@@ -86,7 +95,7 @@ const ScheduleInterview = ({flag,iid=``}) => {
           <input className='w-full h-4/6 border rounded border-blue-400' type={'text'} placeholder='Interview Details' value={discription} name='discription' onChange={(e)=>{ console.log(e.target.value) ;setdiscription(e.target.value)}}></input>
 
          </div>
-         <div className='overflow-hidden w-4/5 mx-auto mt-4 border-2 border-black rounded hover:bg-blue-400 active:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-800 active'>
+         <div className='overflow-hidden w-4/5 mx-auto mt-4 border-2 border-black rounded hover:bg-blue-400 active:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-800 active cursor-pointer font-medium hover:scale-110 duration-200'>
              <button type='submit' className=''>{flag==="new" ? 'Schedule Interview': 'Update'} </button>
          </div>
 

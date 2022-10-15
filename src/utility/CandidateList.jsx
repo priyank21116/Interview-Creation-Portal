@@ -2,11 +2,34 @@ import React from 'react'
 import { useEffect,useState } from 'react'
 import axios from 'axios'
 
+
+const CadidateRow =({item,index, addinlist})=>{
+
+  const [itemstate,setstate]= useState(false)
+  
+      return(
+        <div onClick={()=>{setstate(!itemstate)}}>
+
+
+       <div className='bg-white my-2 mx-2 py-3 border-gray-200 border-2 rounded-xl px-4 active:bg-blue-100 active:border-2 active:border-blue-400  hover:scale-y-110 cursor-pointer duration-200' >
+       {/* <div className={itemstate ? `  bg-blue-100 border-2 border-blue-400  rounded-xl `:''}> */}
+  
+       <h3 className='text-gray-700'>{item.name}</h3>
+      <div className=' text-gray-500 flex justify-between'>
+   <p>{item.appliedfor ? item.appliedfor : item.position} </p>
+   <p className=''>{item.email}</p>
+   {/* </div> */}
+   </div>
+ </div>
+ </div>
+      )
+}
+
 const CandidateList = ({flag,addinlist}) => {
   let baseapi =`https://interviewportalprk.herokuapp.com`
 
   const [data,setdata] = useState([])
-  // const [selected,setselected] =useState(false) 
+  
   let api = flag==="candidate"?` ${baseapi}/cd/list` : `${baseapi}/in/list`;
   // let tag = flag ==="candidate"?'cdList' : 'intList'
 
@@ -25,19 +48,10 @@ useEffect(()=>{
   
     {/* item */}
 
-    {data && data.map((item,index)=>(<div key={item._id}  onClick={()=>{  addinlist(item) ;}}>
-      
-      <div className='bg-white my-2 mx-2 py-2 border-gray-200 border-2 rounded-xl px-4 active:bg-blue-100 active:border-2 active:border-blue-400'>
-      
-       <h3 className='text-gray-700'>{item.name}</h3>
-       <div className=' text-gray-500 flex justify-between'>
-       <p>{item.appliedfor ? item.appliedfor : item.position} </p>
-       <p className=''>{item.email}</p>
-       </div>
-   
-     </div>
-    
-     </div>
+    {data && data.map((item,index)=>(
+      <div key={item._id}  onClick={()=>{  addinlist(item) ;}}>
+           <CadidateRow item={item} index={index} addinlist={addinlist} />
+           </div>
      )
 
 )}

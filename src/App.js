@@ -28,7 +28,7 @@ function App() {
 
       <div className='h-auto w-full overflow-hidden -m-0 -p-0'>
      
-          <div className='grid grid-cols-2 overflow-hidden h-25 '>
+          <div className='grid grid-cols-2 overflow-hidden h-25 cursor-pointer '>
               <Link to ='/home'> <div className={task==='schedule'?'deactive':'active'} onClick={()=>{settask('home')}}>Interview List</div></Link>
               <Link to='/s'> <div className={task==='schedule'? `active` : `deactive`} onClick={()=>{settask('schedule')}}>Schedule Interview</div></Link>
           </div>
