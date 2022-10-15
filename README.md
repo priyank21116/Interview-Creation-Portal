@@ -1,7 +1,7 @@
 # Interview Creation Portal
 ---
 ## Website link:-
-### https://majestic-creponne-98bf4a.netlify.app/
+### https://interviewportalprk.netlify.app/
 ---
 ### Tech Used - React, JavaScript, TailwindCss, Css, Html.
 ---
