@@ -8,28 +8,37 @@
 ## BackendCode- https://github.com/priyank21116/Interview-CreationPortal-Backend
 ---
 
-Schedule Interview screen
+### Schedule Interview screen
+
 ![st](./src/images/st.png)
 ![sl](./src/images/sl.png)
 
-View All Scheduled Interview -Screen
+### View All Scheduled Interview -Screen
+
 ![h](./src/images/h.png)
 
-Update Interview - Screen
+### Update Interview - Screen
+
 ![het](./src/images/het.png)
 ![heb](./src/images/heb.png)
 
 
 ## Basic Features
-- Singal Page Website
+
 - An interview creation section where the admin can create an interview by selecting participants, start time ,end time and description. Backend should throw error with proper error message if: 
 -- Any of the participants is not available during the scheduled time (i.e, has another interview scheduled)
 -- No of participants is less than 2
 -- Other then these two, app have various component specific checks and error
 - An interviews list page where admin can see all the upcoming interviews.From here Admin can delete or reshedule interview
 - An interview edit dropout component where admin can edit the created interview with the same validations as on the creation page.
+- Singal Page Website
+- Efficent use of components,with least possible code repeatition
+- Styling and UI created using Tailwind Css
 
 
+---
+
+---
 
 
 
