@@ -3,7 +3,7 @@
 ## Website link:-
 ### https://interviewportalprk.netlify.app/
 ---
-### Tech Used - React, JavaScript, TailwindCss, Css, Html.
+### Tech Used - React js, JavaScript, TailwindCss, Css, Html.
 ---
 ## BackendCode- https://github.com/priyank21116/Interview-CreationPortal-Backend
 ---
