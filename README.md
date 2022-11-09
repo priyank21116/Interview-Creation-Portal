@@ -13,7 +13,7 @@
 ![st](./src/images/st.png)
 ![sl](./src/images/sl.png)
 
-### View All Scheduled Interview -Screen
+### View All Scheduled Interview -Screen.
 
 ![h](./src/images/h.png)
 
